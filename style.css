@@ -1,0 +1,40 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+nav {
+  border-right: 2px solid rgba(128, 128, 128, 0.445);
+  min-height: 100vh;
+  max-width: 250px;
+  align-items: flex-start !important;
+}
+.nav-item img {
+  width: 20px;
+  height: 20px;
+}
+.nav-brand {
+  width: 100%;
+}
+.container-fluid {
+  align-items: flex-start;
+}
+#appContainer {
+  display: flex;
+
+}
+.profile{
+  width: 30px;
+  height: 30px;
+}
+tbody tr:nth-child(odd){
+  background-color: aquamarine;
+}
