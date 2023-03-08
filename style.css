@@ -40,8 +40,5 @@ nav {
   border-radius: 50%;
 }
 tbody tr:nth-child(odd){
-  background-color: aquamarine;
+  background-color: #a3ffe087;
 }
-/* tbody tr:not(.founded) {
-  display: none;
-} */
