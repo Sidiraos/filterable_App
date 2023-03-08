@@ -19,7 +19,7 @@ async function fetchData (url) {
 function getRandomUsers(data) {
     const randomUsers = {};
     data.forEach((user , index)=> {
-        randomUsers[`user${index+1}`] = [[user.name.first + " " +  user.name.last , user.picture.medium] , user.email , user.cell]
+        randomUsers[`user${index+1}`] = [[user.name.first + " " + user.name.last , user.name.first , user.name.last , user.name.last + " " + user.name.first] , user.picture.medium , user.email , user.cell]
     })
     console.log(randomUsers);
     addRandomInDOm(randomUsers);    
@@ -34,9 +34,9 @@ function addRandomInDOm(randomUsers) {
 
     for(let user in randomUsers) {
         let name = randomUsers[user][0][0];
-        let profilePicture = randomUsers[user][0][1];
-        let email = randomUsers[user][1];
-        let cell = randomUsers[user][2];
+        let profilePicture = randomUsers[user][1];
+        let email = randomUsers[user][2];
+        let cell = randomUsers[user][3];
         document.querySelector('tbody').innerHTML += `
         <tr>
         <td>
@@ -61,21 +61,21 @@ function handleApp(data){
     const randomUsers = getRandomUsers(data);
     search.addEventListener('input', (e)=> {
         for(let user in randomUsers) {
-            let name = randomUsers[user][0][0];
-            let arrayName = name.split(" ").map(item => item.toLowerCase())
+            let names = randomUsers[user][0];
+            let arrayName = names.map(item => item.toLowerCase())
+            console.log(arrayName);
             let founded  = arrayName.includes(e.target.value.toLowerCase());
-            const parent = document.getElementsByClassName(name)[0].closest('tr');
+            const parent = document.getElementsByClassName(names[0])[0].closest('tr');
             if (founded){
-                console.log("item found : " + name + " " +founded);
+                console.log("item found : " + names[0] + " " +founded);
                 parent.classList.add('active');
-                console.log(parent);
             } else {
                 parent.classList.remove('active');
             }
             document.querySelectorAll('tbody tr').forEach(item => {
                 if(item.classList.contains('active') || e.target.value.length === 0){
                     item.style.display = "table-row";
-                } else{
+                }else{
                     item.style.display = "none";
                 }
             })
