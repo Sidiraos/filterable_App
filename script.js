@@ -63,18 +63,22 @@ function handleApp(data){
         for(let user in randomUsers) {
             let name = randomUsers[user][0][0];
             let arrayName = name.split(" ").map(item => item.toLowerCase())
-            let keySearched = arrayName.includes(e.target.value.toLowerCase());
-            if (keySearched){
-                console.log("item found");
-            }            
-            // console.log(keySearched);
-            // if(!keySearched){
-            //     document.querySelector(`${name}`).closest('tr').classList.add("notfound")
-            // }else if (!e.target.value && document.querySelector(`${name}`).classList.contains("notfound")) {
-            //     console.log("empty search");
-            //     document.querySelector(`${name}`).classList.remove("notfound");
-            // }
-            
+            let founded  = arrayName.includes(e.target.value.toLowerCase());
+            const parent = document.getElementsByClassName(name)[0].closest('tr');
+            if (founded){
+                console.log("item found : " + name + " " +founded);
+                parent.classList.add('active');
+                console.log(parent);
+            } else {
+                parent.classList.remove('active');
+            }
+            document.querySelectorAll('tbody tr').forEach(item => {
+                if(item.classList.contains('active') || e.target.value.length === 0){
+                    item.style.display = "table-row";
+                } else{
+                    item.style.display = "none";
+                }
+            })
         }
     }); 
 }
