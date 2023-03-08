@@ -1,5 +1,6 @@
 let url = "https://randomuser.me/api/?nat=fr&results=50";
 const search = document.getElementById('search');
+
 async function fetchData (url) {
     try {
         const response = await fetch(url);
@@ -15,7 +16,6 @@ async function fetchData (url) {
     }
 }
 
-
 function getRandomUsers(data) {
     const randomUsers = {};
     data.forEach((user , index)=> {
@@ -26,9 +26,6 @@ function getRandomUsers(data) {
     return randomUsers;
 
 }
-
-
-fetchData(url);
 
 function addRandomInDOm(randomUsers) {
 
@@ -50,9 +47,6 @@ function addRandomInDOm(randomUsers) {
     } 
 }
 
-
-document.getElementById('form').addEventListener('submit', handleSubmit);
-
 function handleSubmit(e) {
     e.preventDefault();
 }
@@ -64,7 +58,8 @@ function handleApp(data){
             let names = randomUsers[user][0];
             let arrayName = names.map(item => item.toLowerCase())
             console.log(arrayName);
-            let founded  = arrayName.includes(e.target.value.toLowerCase());
+            let searchName = e.target.value.toLowerCase().trim();
+            let founded  = arrayName.includes(searchName);
             const parent = document.getElementsByClassName(names[0])[0].closest('tr');
             if (founded){
                 console.log("item found : " + names[0] + " " +founded);
@@ -82,3 +77,6 @@ function handleApp(data){
         }
     }); 
 }
+
+fetchData(url);
+document.getElementById('form').addEventListener('submit', handleSubmit);
