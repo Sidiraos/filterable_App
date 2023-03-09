@@ -20,5 +20,11 @@ sensitive case is fixed but space case not yet
     <li>change color and background on active link navbar</li>
 </ul>
 
+<b>V1.6</b>: improve design add responsive
+<ul>
+    <li>add responsive breakpoint <= 576px</li>
+    <li>add responsive design <= 279px </li>
+    <li>remove border on table</li>
+</ul>
 
 

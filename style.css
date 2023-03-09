@@ -15,35 +15,44 @@ body {
 #appContainer {
   display: flex;
 }
+
 nav {
   border-right: 2px solid rgba(128, 128, 128, 0.445);
   min-height: 100vh;
   max-width: 250px;
   align-items: flex-start !important;
 }
+
 .container-fluid {
   align-items: flex-start;
   padding: 0;
 }
-.container1-child1 ,.container1-child2{
+
+.container1-child1, .container1-child2 {
   width: 100%;
 }
+
 .container1-child1 {
   padding: 15px;
   text-align: center;
 }
+
 .container2 {
   width: 100%;
 }
+
 .nav-brand {
   width: 100%;
 }
+
 .nav-brand h2 {
   vertical-align: middle;
 }
+
 .nav-brand img {
   vertical-align: bottom;
 }
+
 .nav-item img {
   width: 30px;
   height: 30px;
@@ -52,31 +61,78 @@ nav {
 .nav-item .nav-link {
   padding: 15px;
 }
+
 .nav-link span {
   margin-left: 10px;
 }
+
 .nav-link:hover {
-  background-color: #a9a9a91a;
+  background-color: rgba(169, 169, 169, 0.1019607843);
 }
-.profile{
+
+.profile {
   width: 50px;
   height: 50px;
   border-radius: 50%;
 }
-tbody tr:nth-child(odd){
-  background-color: #a3ffe036;
+
+tbody tr:nth-child(odd) {
+  background-color: rgba(163, 255, 224, 0.2117647059);
 }
+
 .navbar-nav .nav-link.active {
   color: #12a472;
-  background-color: rgb(185 185 205 / 25%);
+  background-color: rgba(185, 185, 205, 0.25);
 }
-input[type="search"] {
+
+input[type=search] {
   background: url(images/search.svg) #e9ecef no-repeat;
   background-size: 20px 20px;
   background-position: 12px center;
-  padding: 2%;
+  padding: 10px;
   padding-left: 45px;
 }
+
 .form-control {
   width: 60%;
+}
+
+@media screen and (max-width: 576px) {
+  .container1 {
+    display: none;
+  }
+  thead {
+    display: none;
+  }
+  tr,td {
+    display: block;
+    border: none;
+    text-align: center;
+    width: 100%;
+  }
+  .form-control {
+    width: 100%;
+  }
+}
+@media screen and (max-width:279px){
+  .nav-item img {
+    width: 10px;
+    height: 10px;
+  }
+  .ms-3{
+    margin-left: 0!important;
+  }
+  tr {
+    width: 90vw;
+  }
+  td {
+    word-wrap: break-word;
+    text-align: left;
+  }
+  td span {
+    display: block;
+  }
+  td.email{
+    font-size: clamp(5px , 6vw , 16px);
+  }
 }

@@ -40,8 +40,8 @@ function addRandomInDOm(randomUsers) {
             <img src=${profilePicture} alt="" srcset="" class="profile">
             <span class="${name}">${name}</span>
         </td>
-        <td>${email}</td>
-        <td>${cell}</td>
+        <td class = "email">${email}</td>
+        <td class="cell">${cell}</td>
     </tr>
     `
     } 
