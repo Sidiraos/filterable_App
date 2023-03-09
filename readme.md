@@ -27,4 +27,11 @@ sensitive case is fixed but space case not yet
     <li>remove border on table</li>
 </ul>
 
+<b>V1.7</b>: improve design add responsive
+<ul>
+    <li>add breakpoint design btwn 576px and 860px</li>
+    <li>add scroll bar overflow x</li>
+    <li>customised scroll bar</li>
+</ul>
+
 

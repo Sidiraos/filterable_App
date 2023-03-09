@@ -76,9 +76,35 @@ nav {
   border-radius: 50%;
 }
 
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+
 tbody tr:nth-child(odd) {
   background-color: rgba(163, 255, 224, 0.2117647059);
 }
+tbody tr>*{
+  vertical-align: middle;
+  overflow-x: auto;
+  width: 33.33%;
+  scrollbar-width: thin;
+  scrollbar-color: red blue;
+}
+tbody tr > *::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+}
+::-webkit-scrollbar-track{
+  background-color: #f1f1f1;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #888;
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: #555;
+}
+
 
 .navbar-nav .nav-link.active {
   color: #12a472;
@@ -101,6 +127,9 @@ input[type=search] {
   .container1 {
     display: none;
   }
+  table {
+    table-layout: auto;
+  }
   thead {
     display: none;
   }
@@ -112,6 +141,15 @@ input[type=search] {
   }
   .form-control {
     width: 100%;
+  }
+  tbody td {
+    width: 100%;
+  }
+  .ms-3 {
+    margin-left: 0!important;
+  }
+  h2 {
+    text-align: center;
   }
 }
 @media screen and (max-width:279px){
@@ -134,5 +172,14 @@ input[type=search] {
   }
   td.email{
     font-size: clamp(5px , 6vw , 16px);
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width:860px){
+  .container1 {
+    display: none;
+  }
+  .cell {
+    word-wrap: normal;
   }
 }
