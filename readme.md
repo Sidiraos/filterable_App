@@ -34,4 +34,6 @@ sensitive case is fixed but space case not yet
     <li>customised scroll bar</li>
 </ul>
 
+<b>V1.8</b>: Optimisation JavaScript Code 
+
 
